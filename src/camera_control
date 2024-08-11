@@ -1,0 +1,14 @@
+import time
+import cv2
+
+def capture_image():
+    camera = cv2.VideoCapture(0)
+    ret, frame = camera.read()
+    if ret:
+        cv2.imwrite('captured_image.jpg', frame)
+        print("Image captured successfully!")
+    camera.release()
+
+if __name__ == "__main__":
+    print("Starting camera...")
+    capture_image()
