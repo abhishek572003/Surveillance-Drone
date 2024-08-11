@@ -1,0 +1,27 @@
+class DroneController:
+    def __init__(self):
+        self.altitude = 0
+        self.battery_level = 11.1  # Assume 11.1V battery
+
+    def takeoff(self):
+        self.altitude += 10
+        print(f"Taking off. Current altitude: {self.altitude} meters")
+
+    def land(self):
+        self.altitude = 0
+        print("Landing. Drone is now on the ground.")
+
+    def control_camera(self):
+        # Placeholder for controlling ESP 32 Camera Module
+        print("Camera control initiated")
+
+    def check_battery(self):
+        print(f"Battery level: {self.battery_level}V")
+
+if __name__ == "__main__":
+    drone = DroneController()
+    drone.takeoff()
+    drone.control_camera()
+    drone.check_battery()
+    time.sleep(5)
+    drone.land()
